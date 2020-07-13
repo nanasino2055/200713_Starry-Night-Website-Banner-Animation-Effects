@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous"> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
+    <title>webサイト制作テンプレート</title>
+  </head>
+  <body>
+
+    <div class="scene">
+      <div class="moon"></div>
+      <img src="forest.png" alt="" class="forest">
+      <img src="cloud1.png" alt="" class="cloud1">
+      <img src="cloud2.png" alt="" class="cloud2">
+      <img src="cloud3.png" alt="" class="cloud3">
+      <img src="cloud1.png" alt="" class="cloud4">
+      <img src="cloud2.png" alt="" class="cloud5">
+      <img src="cloud3.png" alt="" class="cloud6">
+    </div>
+
+    <script type="text/javascript">
+      //
+      function stars(){
+        let count = 500; //変数で星の数を設定
+        let scene = document.querySelector('.scene'); //セレクタ.sceneを取得
+        let i = 0;
+        while(i < count){ // 条件「変数iが500以下である限り繰り返し計算を行う」
+          let star = document.createElement("i"); //HTML要素を作成する。この場合はiタグ。
+          let x =Math.floor(Math.random() * window.innerWidth); //画面幅を元にランダムな整数を代入する
+          let y =Math.floor(Math.random() * window.innerHeight); //画面高さを元にランダムな整数を代入する
+          let duration = Math.random() * 10; //0~9.999...の乱数を発生させる
+          let size = Math.random() * 2; // 0~1.999...の乱数を発生させる
+
+          star.style.left = x+'px'; //iタグにleft:*px;を設定する。0~9px;
+          star.style.top = y+'px'; //iタグにtop:*px;を設定する。0~9px;
+          star.style.width = 1+size+'px'; //iタグにwidth:*px;を設定する。1~2px
+          star.style.height = 1+size+'px'; //iタグにheight:*px;を設定する。1~2px
+
+          star.style.animationDuration = 5+duration+'s'; //アニメーションの時間を指定
+          star.style.animationDelay = duration+'s'; //アニメーションが始まるまでの時間を指定
+
+          scene.appendChild(star); //<div class="scene">の子要素にiタグを追加する
+          i++ //iに1を加算して最初に戻る
+        }
+    }
+    stars(); //function starsをHTML上に出力する
+    </script>
+  </body>
+</html>
+
+<!--
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ -->
